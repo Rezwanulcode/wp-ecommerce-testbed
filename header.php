@@ -63,42 +63,40 @@
 				?>
 
 				<a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart'); ?>"><?php echo sprintf(_n('%d item', '%d items', WC()->cart->get_cart_contents_count()), WC()->cart->get_cart_contents_count()); ?> – <?php echo WC()->cart->get_cart_total();
-																																																																																							// echo "<pre>";
-																																																																																							// print_r(WC()->cart);
-																																																																																							// echo "</pre>";
+																																																																																							
 
 																																																																																							?></a>
 
-				<!-- <table class="cart-table">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-			foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-				$_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
-			?>
-            <tr>
-                <td><?php echo $_product->get_title(); ?></td>
-                <td><?php echo wc_price($_product->get_price()); ?></td>
-                <td><?php echo $cart_item['quantity']; ?></td>
-                <td><?php echo wc_price($cart_item['line_subtotal']); ?></td>
-            </tr>
-            <?php
-			}
-				?>
-    </tbody>
-</table> -->
+				<table class="cart-table">
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
+							$_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
+						?>
+							<tr>
+								<td><?php echo $_product->get_title(); ?></td>
+								<td><?php echo wc_price($_product->get_price()); ?></td>
+								<td><?php echo $cart_item['quantity']; ?></td>
+								<td><?php echo wc_price($cart_item['line_subtotal']); ?></td>
+							</tr>
+						<?php
+						}
+						?>
+					</tbody>
+				</table>
 
 				<?php
 				// do_action('shoppingcart_cart_wishlist_icon_display');
 
-				// the_widget('WC_Widget_Cart', '');
+				the_widget('WC_Widget_Cart', '');
 				echo "mukto wishlist";
 				echo 	do_shortcode("[yith_wcwl_items_count] ");
 				?>

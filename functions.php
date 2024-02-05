@@ -207,7 +207,7 @@ function woocommerce_header_add_to_cart_fragment($fragments)
 	return $fragments;
 }
 
-//? with list ajax
+//? wish list ajax
 
 
 if (defined('YITH_WCWL') && !function_exists('yith_wcwl_get_items_count')) {
