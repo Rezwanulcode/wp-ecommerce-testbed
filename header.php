@@ -52,7 +52,7 @@
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'mobileecom' ); 
 																															?></button>
-				<?php echo 	the_custom_logo(); ?>
+				<?php echo get_custom_logo(); ?>
 				<?php
 				wp_nav_menu(
 					array(
